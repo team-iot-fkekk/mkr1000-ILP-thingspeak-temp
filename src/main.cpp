@@ -26,7 +26,7 @@
 #include <Arduino.h>
 #include "ThingSpeak.h"
 #include <WiFi101.h>
-#include "secrets.h"
+#include "secrets-example.h"
 
 #define myLED 6
 
@@ -78,7 +78,7 @@ void loop() {
   if(voltage < 760){
     myStatus = String("Temperature OK"); 
   }
-  else if(voltage >= 760 & voltage < 780){
+  else if((voltage >= 760) & (voltage < 780)){
     myStatus = String("TEMPERATURE RISING");
   }
   else if(voltage > 780){
